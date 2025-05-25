@@ -1,5 +1,5 @@
 from django.db import models
-from event.models import EventModel
+
 class Photographer(models.Model):
     name = models.CharField(max_length=255)
     specialty = models.CharField(max_length=255)
