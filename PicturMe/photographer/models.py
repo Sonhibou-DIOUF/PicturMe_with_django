@@ -1,8 +1,12 @@
 from django.db import models
 from event.models import EventModel
-class PhotographerModel(models.Model):
-    photographer_id = models.IntegerField(primary_key=True)
-    name = models.CharField(max_length=30)
-    specialty = models.CharField(max_length=30)
-    email = models.CharField(max_length=30)
-    phone = models.CharField(max_length=30)
+class Photographer(models.Model):
+    name = models.CharField(max_length=255)
+    specialty = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255)
+    phone = models.CharField(max_length=12)
+
+
+
+    def __str__(self):
+        return f'Photographer : {self.name}'

@@ -1,14 +1,27 @@
 from django.db import models
 
-class TransactionModel(models.Model):
-    class TransactionChoice(models.TextChoices):
-        INVOICE = "Invoice", "Invoice"
-        PAYMENT = "Payment", "Payment"
+class Transaction(models.Model):
+    TransactionChoices = [
+        ("INV", "Invoice"),
+        ("PAY", "Payment"),
+        ("CRD", "Credit Card"),
+        ("BNK", "Bank Transfer"),
+        ("CSH", "Cash"),
+        ("CHK", "Check"),
+        ("PPY", "PayPal"),
+        ("APP", "Apple Pay"),
+        ("GPA", "Google Pay"),
+        ("BTC", "Bitcoin"),
+        ("OTH", "Other")
+    ]
 
-    transaction_id = models.IntegerField(primary_key=True)
     amount = models.PositiveIntegerField()
     transaction_date = models.DateField()
     transaction_type = models.CharField(
-        max_length=20,
-        choices=TransactionChoice.choices
+        max_length=255,
+        default= "PAY",
+        choices=TransactionChoices
     )
+
+    def __str__(self):
+        return self.amount
