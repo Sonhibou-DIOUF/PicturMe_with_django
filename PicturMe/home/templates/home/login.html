@@ -1,8 +1,22 @@
 {% extends 'home/layout.html' %}
-
+{% block title %}
+    LogIn
+{% endblock %}
 {% block content %}
     <h2 style=" text-align: center; font-size: 2rem" >Log In</h2style>
         <form method="post">
             {% csrf_token %}
+           <div>
+               <label for="#">Username
+                    <input type="text">
+               </label>
+
+               <label for="password">Password
+                    <input type="password">
+               </label>
+               <input type="submit" value="Login">
+
+
+           </div>
         </form>
 {% endblock %}
