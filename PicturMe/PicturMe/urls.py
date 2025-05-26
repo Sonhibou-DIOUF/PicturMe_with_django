@@ -24,4 +24,5 @@ urlpatterns = [
     path('transaction/',include('transaction.urls')),
     path('event/',include('event.urls')),
     path('photographer/',include('photographer.urls')),
+    path('home/',include('home.urls')),
 ]

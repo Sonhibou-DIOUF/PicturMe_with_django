@@ -1,11 +1,14 @@
 from django.shortcuts import render
 
 # Create your views here.
-
+def add_picture(request):
+    context = {}
+    return render(request, 'picture/addpicture.html', context)
 
 def one_picture(request, id):
-    pass
+    context = {}
+    return render(request, 'picture/onepicture.html', context)
 
 def all_pictures(request):
-
-    pass
+    context = {}
+    return render(request, 'picture/allpictures.html', context)
