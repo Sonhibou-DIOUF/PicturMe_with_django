@@ -2,6 +2,22 @@
 {% block title  %} Add client {% endblock %}
 
 {% block content %}
-<h1>Add Client Page</h1>
+<div class="container">
+    <h1>Add a new client</h1>
+    <div>
+    <div class="row">
+        <div class="col-12">
+            <form method="post">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
 
 {% endblock %}

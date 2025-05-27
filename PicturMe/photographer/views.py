@@ -1,8 +1,18 @@
 from django.shortcuts import render
-
+from .forms import PhotographerForm, PhotographerModelForm
+from photographer.models import Photographer
 # Create your views here.
 def add_photographer(request):
-    context = {}
+    """
+       Add a photographer
+    """
+    if request.method == 'POST':
+        form = PhotographerModelForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+    else:
+        form = PhotographerModelForm()
+    context={'form':form}
     return render(request, 'photographer/addphotographer.html', context)
 
 def one_photographer(request, id):

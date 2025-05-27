@@ -1,8 +1,18 @@
 from django.shortcuts import render
-
+from .forms import PictureModelForm, PictureForm
+from .models import Picture
 # Create your views here.
 def add_picture(request):
-    context = {}
+    """
+        Add a picture to the database
+    """
+    if request.method == 'POST':
+        form = PictureModelForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+    else:
+        form = PictureModelForm()
+    context = {'form': form}
     return render(request, 'picture/addpicture.html', context)
 
 def one_picture(request, id):

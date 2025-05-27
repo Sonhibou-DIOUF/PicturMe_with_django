@@ -1,8 +1,61 @@
 
 {% extends 'home/layout.html' %}
-{% block title  %} One client {% endblock %}
+{% block title  %} Photographer {% endblock %}
 
 {% block content %}
-<h1>One client Page</h1>
+    <div class="container">
+        <h1 class="mb-4">Photographer dashboard</h1>
+        <div class="card mb-4">
+            <div class="card-header">Photographer Informations</div>
+            <div class="card-body">
+                <ul class="list">
+                    <li>
+                        <i class="bi bi-emoji-smile"></i> Name
+                    </li>
+                    <li>
+                        <i class="bi bi-pin-angle-fill"></i> Speciality
+                    </li>
+                    <li>
+                        <i class="bi bi-envelope-open-fill"></i> Email
+                    </li>
+                    <li>
+                        <i class="bi bi-telephone-fill"></i> Phone
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card mb-4">
+            <div class="card-header">Photographer seances</div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Location</th>
+                            <th>Hour</th>
+                            <th>Client</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#</td>
+                            <td>#</td>
+                            <td>#</td>
+                            <td>#</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+   </div>
+<div class="container">
+        <div class="card mb-4">
+            <div class="card-header">Photographer's picture</div>
+        </div>
+
+</div>
 
 {% endblock %}
